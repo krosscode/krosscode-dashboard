@@ -1,0 +1,263 @@
+html,
+body {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	background: #000;
+	overflow: hidden;
+}
+
+.widthAsHeight {
+	margin-top: 100%;
+}
+
+#flexContainer {
+	height: 100vh;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+}
+
+#dashboardHeader {
+	overflow: hidden;
+	background: #004D40;
+	color: #fff;
+	-ms-flex-negative: 0;
+	    flex-shrink: 0;
+}
+
+#dashboardHeader__mainBar {
+	position: relative;
+	overflow: hidden;
+}
+
+#dashboardHeader__mainBar__heading {
+	margin: 20px;
+	font-weight: 300;
+}
+
+#dashboardHeader__subBar {
+	overflow: hidden;
+	background: #00695C;
+}
+
+#dashboardHeader__subBar__heading {
+	margin: 10px 20px;
+	font-weight: 300;
+}
+
+.breadcrumbs {
+	text-decoration: none;
+	color: #fff;
+	opacity: .3;
+	transition: opacity .3s;
+}
+
+.breadcrumbs:hover {
+	opacity: .7;
+}
+
+#dashboardContentContainer {
+	-ms-flex-positive: 1;
+	    flex-grow: 1;
+	background: #000;
+	animation: loadAnim .5s 1 forwards;
+	opacity: 0;
+	overflow-y: scroll;
+	height: 1;
+}
+
+#projectList {
+	width: 100%;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-ms-flex-direction: row;
+	    flex-direction: row;
+}
+
+.project {
+	position: relative;
+	-ms-flex-preferred-size: 50%;
+	    flex-basis: 50%;
+	background: #333;
+	background-position: center;
+	background-size: cover;
+}
+
+.projectLink {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	    align-items: center;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	color: #fff;
+	font-size: 30px;
+	font-family: "Roboto Condensed", sans-serif;
+	text-decoration: none;
+	text-shadow: 0px 0px 10px rgba(0, 0, 0, .7);
+	transition: background .3s;
+}
+
+.projectLink:hover {
+	background: rgba(0, 0, 0, .7);
+}
+
+.projectTitle {
+	position: relative;
+	text-align: center;
+	text-transform: capitalize;
+	transition: transform .3s;
+}
+
+.projectLink:hover .projectTitle {
+	transform: translateY(-10px);
+}
+
+.projectTitleArrow {
+	font-family: "Roboto", sans-serif;
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	transform: translateY(50px);
+	opacity: 0;
+	transition: transform .3s, opacity .3s;
+}
+
+.projectLink:hover .projectTitleArrow {
+	transform: translateY(30px);
+	opacity: 1;
+}
+
+#dashboardFooter {
+	overflow: hidden;
+	background: #004D40;
+	color: #fff;
+	padding: 0 20px;
+	text-align: center;
+	z-index: 2;
+	-ms-flex-negative: 0;
+	    flex-shrink: 0;
+}
+
+#dashboardNewProjectForm {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px;
+	color: #fff;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+#dashboardNewProjectForm label {
+	font-family: "Roboto", sans-serif;
+	font-size: 20px;
+}
+
+#dashboardNewProjectForm input:not(#projectImage):not(#submit) {
+	box-sizing: border-box;
+	width: 100%;
+	margin-top: 10px;
+	border: 0;
+	font-size: 20px;
+	padding: 5px 10px;
+	outline: 0;
+	border: 3px solid #00695C;
+	transition: border .3s;
+}
+
+#dashboardNewProjectForm input:not(#projectImage):not(#submit):focus {
+	border: 3px solid #008575;
+}
+
+#projectImage {
+	opacity: 0;
+	height: 0;
+	width: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#projectImageButton {
+	display: -ms-flexbox;
+	display: flex;
+	float: left;
+	-ms-flex-align: center;
+	    align-items: center;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	width: 50%;
+	margin-top: 10px;
+	background: #004D40;
+	min-height: 50px;
+	transition: background .3s;
+}
+
+#projectImageButton:hover {
+	background: #00695C;
+}
+
+#submit {
+	box-sizing: border-box;
+	min-height: 50px;
+	float: left;
+	width: 50%;
+	margin-top: 10px;
+	border: 0;
+	font-family: "Roboto", sans-serif;
+	font-size: 20px;
+	color: #fff;
+	background: #00695C;
+	transition: background .3s;
+}
+
+#submit:hover {
+	background: #008575;
+}
+
+@media screen and (min-width: 530px) {
+	.project {
+		-ms-flex-preferred-size: 33.3333333333%;
+		    flex-basis: 33.3333333333%;
+	}
+}
+
+@media screen and (min-width: 850px) {
+	.project {
+		-ms-flex-preferred-size: 25%;
+		    flex-basis: 25%;
+	}
+}
+
+@media screen and (min-width: 1150px) {
+	.project {
+		-ms-flex-preferred-size: 20%;
+		    flex-basis: 20%;
+	}
+}
+
+@media screen and (min-width: 1500px) {
+	.project {
+		-ms-flex-preferred-size: 16.66666666666667%;
+		    flex-basis: 16.66666666666667%;
+	}
+}
+
+@keyframes loadAnim {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
